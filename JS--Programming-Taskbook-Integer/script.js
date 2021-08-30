@@ -35,15 +35,13 @@ console.log(numFirst * numSecond);
 
 // Integer8◦
 // . Дано двузначное число. Вывести число, полученное при перестановке цифр исходного числа.
-console.log(Number(String(numSecond) + String(numFirst)));
-// вариант 2
 console.log(numSecond * 10 + numFirst);
 
 
 // Integer9◦
 // Дано трехзначное число. Используя одну операцию деления нацело, вывести первую цифру данного числ(сотни).
 var threeDigitNum = 345;
-var numberFist = parseInt(threeDigitNum / 100);
+var numberFist = (threeDigitNum - threeDigitNum % 100) / 100;
 console.log(numberFist);
 
 
@@ -51,7 +49,7 @@ console.log(numberFist);
 //Дано трехзначное число. Вывести вначале его последнюю цифру (единицы), а затем — его среднюю цифру (десятки).
 var numberThird = threeDigitNum % 10;
 console.log(numberThird);
-var numberSecond = parseInt(threeDigitNum/10) % 10;
+var numberSecond = parseInt(threeDigitNum / 10) % 10;
 console.log(numberSecond);
 
 

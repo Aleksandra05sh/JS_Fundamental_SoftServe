@@ -49,6 +49,8 @@ console.log(calcExponent2(5));
 
 
 
+
+/*СЮДА !!!*/
 function f(a) {
     var x = -1;
     if (a < 0 ) {

@@ -47,3 +47,19 @@ console.log(calcExponent2(5));
 /*For39 решение: https://github.com/Aleksandra05sh/JS_Fundamental_SoftServe/tree/JS--Programming-Taskbook-For/JS--Programming-Taskbook-For
 уже проверял*/
 
+
+
+function f(a) {
+    var x = -1;
+    if (a < 0 ) {
+        x = 0;
+    } else if ((parseInt(a + 2)) % 2 === 0)  {
+        x = 1;
+    } else {
+        x = -1
+    } 
+    return x;
+}
+
+console.log(f(1));
+

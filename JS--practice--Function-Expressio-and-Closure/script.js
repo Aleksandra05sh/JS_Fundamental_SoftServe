@@ -81,85 +81,70 @@ var add = function (x, y) {
 // }    
 
 
-// var PerimeterSquare = createSafePerimeterSquare();
-// PerimeterSquare[0](1, 0);
-// console.log(PerimeterSquare[1]());
-
-// PerimeterSquare[0](1, 2);
-// console.log(PerimeterSquare[1]());
-
-// PerimeterSquare[0](-1, "привет");
-// console.log(PerimeterSquare[1]());
-
-// PerimeterSquare[0](true, 2);
-// console.log(PerimeterSquare[1]());
-
-// PerimeterSquare[0](NaN, 2);
-// console.log(PerimeterSquare[1]());
-
-// PerimeterSquare[0]("", 2);
-// console.log(PerimeterSquare[1]());
-
-// PerimeterSquare[0](null, 2);
-// console.log(PerimeterSquare[1]());
 
 
 
-
-/*Сюда ) Решение с правками */
+/*Сюда ) Решение с правками (Попытка №2)*/
 
 function createSafePerimeterSquare(){
     var arr = [];
-    var sideA;
-    var sideB;
+    var sideA = 1;
+    var sideB = 1;
 
     arr[0] = function (number1) {
         if (typeof number1 === "number" && number1 > 0) {
             sideA = number1;
-        } else {
-            sideA = 0;
-            console.log("Введено некорректное значение");
-        }
+        }   
     }
 
     arr[1] = function (number2) {
         if (typeof number2 === "number" && number2 > 0) {
             sideB = number2;
         }
-        else {
-            sideB = 0;
-            console.log("Введено некорректное значение");
-        }
     } 
 
-    arr[2] = function Perimeter() {
-        var Perimeter = 2 * (sideA + sideB);
-        if (sideA === 0 || sideB === 0 ) {
-            return "Были введены некорректные данные";
-            } else {
-            return "Периметр равен: " + Perimeter ;
-            }
+    arr[2] = function () {
+        var perimeter = 2 * (sideA + sideB);
+            return "Периметр равен: " + perimeter ;
     }
 
-    arr[3] = function Square() {
-        var Square = sideA * sideB;
-        if (sideA === 0 || sideB ===0 ) {
-            return "Были введены некорректные данные";
-            } else {
-            return "Площадь равна:: " + Square;
-            }
+    arr[3] = function () {
+        var square = sideA * sideB;
+        return "Площадь равна: " + square;    
     }
+
     return arr;
 
 }
 
-var PerimeterSquare = createSafePerimeterSquare();
-PerimeterSquare[0](5);
-PerimeterSquare[1](6);
-console.log(PerimeterSquare[2]());
-console.log(PerimeterSquare[3]());
+var perimeterSquare = createSafePerimeterSquare();
+perimeterSquare[0](5);
+perimeterSquare[1](6);
+console.log(perimeterSquare[2]());
+console.log(perimeterSquare[3]());
 
-PerimeterSquare[0](-1);
-PerimeterSquare[1](6);
-console.log(PerimeterSquare[2]());
-console.log(PerimeterSquare[3]());
+perimeterSquare[0](-1);
+perimeterSquare[1](5);
+console.log(perimeterSquare[2]());
+console.log(perimeterSquare[3]());
+
+
+perimeterSquare[0](10);
+perimeterSquare[1](true);
+console.log(perimeterSquare[2]());
+console.log(perimeterSquare[3]());
+
+perimeterSquare[0](10);
+perimeterSquare[1]("10");
+console.log(perimeterSquare[2]());
+console.log(perimeterSquare[3]());
+
+perimeterSquare[0](NaN);
+perimeterSquare[1]("10");
+console.log(perimeterSquare[2]());
+console.log(perimeterSquare[3]());
+
+perimeterSquare[0](null);
+perimeterSquare[1]("10");
+console.log(perimeterSquare[2]());
+console.log(perimeterSquare[3]());
